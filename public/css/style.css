@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-item {
+    transition: transform 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .menu-item {
+        transform: none;
+    }
+
+    .menu-item:hover {
+        transform: none;
+    }
+}
+
+/* Add smooth scrolling for iOS */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Improve touch targets */
+button, 
+a {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+    -webkit-text-size-adjust: 100%;
+} 

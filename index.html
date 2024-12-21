@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Restaurant - Nepali Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Add custom styles */
+        .bg-pattern {
+            background-image: url('/images/dark-food-pattern.jpg');
+            background-color: #000;
+            background-blend-mode: overlay;
+        }
+        
+        .font-script {
+            font-family: 'Brush Script MT', cursive;
+        }
+        
+        /* Add smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation - Updated with semi-transparent dark background -->
+    <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-sm text-white p-4 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="royal.png" alt="Logo" class="h-12 w-auto"> <!-- Add your logo image -->
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-500">HOME</a>
+                <a href="about.html" class="hover:text-yellow-500">ABOUT US</a>
+                <a href="menu.html" class="hover:text-yellow-500">MENU</a>
+                <a href="/gallery" class="hover:text-yellow-500">GALLERY</a>
+                <a href="reservation.html" class="hover:text-yellow-500">RESERVATION</a>
+                <a href="location.html" class="hover:text-yellow-500">LOCATION</a>
+                <a href="/blog" class="hover:text-yellow-500">BLOG</a>
+            </div>
+
+            <!-- Mobile Menu Panel -->
+            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-50 hidden">
+                <div class="flex justify-end p-4">
+                    <button id="mobile-menu-close" class="text-white">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col items-center space-y-6 pt-10">
+                    <a href="index.html" class="text-xl hover:text-yellow-500">HOME</a>
+                    <a href="/about" class="text-xl hover:text-yellow-500">ABOUT US</a>
+                    <a href="menu.html" class="text-xl hover:text-yellow-500">MENU</a>
+                    <a href="/gallery" class="text-xl hover:text-yellow-500">GALLERY</a>
+                    <a href="reservation.html" class="text-xl hover:text-yellow-500">RESERVATION</a>
+                    <a href="/location" class="text-xl hover:text-yellow-500">LOCATION</a>
+                    <a href="/blog" class="text-xl hover:text-yellow-500">BLOG</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Updated with new background style -->
+    <main class="relative min-h-screen bg-pattern">
+        <!-- Background Image Layer -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
+            <img src="/images/food-background.jpg" alt="Restaurant Background" 
+                 class="w-full h-full object-cover opacity-40">
+        </div>
+
+        <!-- Content - Updated styling -->
+        <div class="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+            <h3 class="text-yellow-400 font-script text-4xl mb-4">Welcome</h3>
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-wider">ROYAL RESTAURANT</h1>
+            <p class="text-xl mb-8 tracking-widest">NEW FLAVOURS</p>
+            <a href="reservation.html" 
+               class="bg-yellow-400 text-black px-10 py-4 rounded-full 
+                      hover:bg-yellow-500 transition duration-300 font-bold 
+                      tracking-wider text-lg">
+                BOOK A TABLE
+            </a>
+
+            <!-- Updated Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <span class="text-yellow-400 tracking-widest text-sm">SCROLL</span>
+                <div class="mt-2">
+                    <i class="fas fa-chevron-down text-yellow-400"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add additional sections -->
+    <section class="relative min-h-screen bg-pattern py-20">
+        <!-- Add your content sections here -->
+    </section>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+</body>
+</html> 

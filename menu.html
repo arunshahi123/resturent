@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Royal Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .bg-pattern {
+            background-image: url('/images/dark-food-pattern.jpg');
+            background-color: #000;
+            background-blend-mode: overlay;
+        }
+        
+        .font-script {
+            font-family: 'Brush Script MT', cursive;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .menu-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-sm text-white p-4 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="royal.png" alt="Logo" class="h-12 w-auto">
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-500">HOME</a>
+                <a href="about.html" class="hover:text-yellow-500">ABOUT US</a>
+                <a href="menu.html" class="hover:text-yellow-500">MENU</a>
+                <a href="/gallery" class="hover:text-yellow-500">GALLERY</a>
+                <a href="reservation.html" class="hover:text-yellow-500">RESERVATION</a>
+                <a href="location.html" class="hover:text-yellow-500">LOCATION</a>
+                <a href="/blog" class="hover:text-yellow-500">BLOG</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-yellow-500"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-yellow-500"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header Section -->
+    <header class="relative min-h-[50vh] bg-pattern">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
+            <img src="/images/menu-background.jpg" alt="Menu Background" class="w-full h-full object-cover opacity-40">
+        </div>
+        <div class="relative z-10 min-h-[50vh] flex flex-col items-center justify-center text-center px-4">
+            <h3 class="text-yellow-400 font-script text-4xl mb-4">Discover</h3>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-wider">OUR MENU</h1>
+            <p class="text-xl tracking-widest">AUTHENTIC NEPALI CUISINE</p>
+        </div>
+    </header>
+
+    <!-- Menu Categories Section -->
+    <section class="relative bg-pattern py-20">
+        <div class="container mx-auto px-4">
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 px-4">
+                <button class="text-white hover:text-yellow-500 font-bold tracking-wider text-sm md:text-base" data-category="starters">STARTERS</button>
+                <button class="text-white hover:text-yellow-500 font-bold tracking-wider text-sm md:text-base" data-category="maincourse">MAIN COURSE</button>
+                <button class="text-white hover:text-yellow-500 font-bold tracking-wider text-sm md:text-base" data-category="desserts">DESSERTS</button>
+                <button class="text-white hover:text-yellow-500 font-bold tracking-wider text-sm md:text-base" data-category="beverages">BEVERAGES</button>
+            </div>
+            <!-- Starters Menu Items -->
+            <div id="startersSection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Samosa</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Crispy pastry filled with spiced potatoes and peas</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$8</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Pakora</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Mixed vegetable fritters served with chutney</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$7</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Chhoyla</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional Newari spiced grilled meat appetizer</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$10</span>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Get all category buttons
+                const categoryButtons = document.querySelectorAll('[data-category]');
+                
+                // Get all menu sections
+                const menuSections = {
+                    starters: document.getElementById('startersSection'),
+                    maincourse: document.getElementById('mainCourseSection')
+                };
+
+                // Add click event listeners to all category buttons
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const category = button.dataset.category;
+                        
+                        // Hide all sections first
+                        Object.values(menuSections).forEach(section => {
+                            if(section) section.classList.add('hidden');
+                        });
+                        
+                        // Show the selected section
+                        if(menuSections[category]) {
+                            menuSections[category].classList.remove('hidden');
+                        }
+                        
+                        // Update active button styling
+                        categoryButtons.forEach(btn => {
+                            btn.classList.remove('text-yellow-500');
+                            btn.classList.add('text-white');
+                        });
+                        button.classList.remove('text-white');
+                        button.classList.add('text-yellow-500');
+                    });
+                });
+
+                // Show starters section by default
+                if(menuSections.starters) {
+                    menuSections.starters.classList.remove('hidden');
+                    categoryButtons[0].classList.add('text-yellow-500');
+                    categoryButtons[0].classList.remove('text-white');
+                }
+            </script>
+            <!-- Main Course Menu Items -->
+            <div id="mainCourseSection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Dal Bhat</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional Nepali lentil soup with steamed rice and vegetables</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$15</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Momo</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Nepali dumplings filled with spiced meat or vegetables</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$12</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Thukpa</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Hot noodle soup with vegetables and choice of meat</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$14</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Chicken Curry</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Tender chicken cooked in aromatic Nepali spices</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$16</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Vegetable Biryani</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Fragrant rice cooked with mixed vegetables and spices</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$13</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Lamb Sekuwa</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Grilled marinated lamb with Nepali herbs and spices</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$18</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Dessert Menu Items -->
+            <div id="dessertSection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Kheer</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional rice pudding with cardamom and nuts</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$6</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Gulab Jamun</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Sweet milk dumplings soaked in rose syrup</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$5</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Gajar ko Haluwa</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional carrot pudding with nuts and raisins</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$7</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Sel Roti</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional sweet rice bread ring</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$4</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Beverage Menu Items -->
+            <div id="beveragesSection" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Masala Chai</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Traditional spiced tea with milk</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$3</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Lassi</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Sweet or salty yogurt-based drink</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$4</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Nepali Beer</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Local craft beer selection</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$6</span>
+                    </div>
+                </div>
+
+                <div class="menu-card rounded-lg p-4 md:p-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-yellow-400">Fresh Juice</h3>
+                            <p class="text-sm md:text-base text-gray-400 mt-2">Seasonal fresh fruit juices</p>
+                        </div>
+                        <span class="text-yellow-400 font-bold">$5</span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Get all menu sections
+                const sections = {
+                    starters: document.getElementById('startersSection'),
+                    maincourse: document.getElementById('mainCourseSection'),
+                    desserts: document.getElementById('dessertSection'),
+                    beverages: document.getElementById('beveragesSection')
+                };
+
+                // Get all menu buttons
+                const menuButtons = document.querySelectorAll('button[data-category]');
+                
+                // Add click event listeners to buttons
+                menuButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // First, hide all sections
+                        Object.values(sections).forEach(section => {
+                            if (section) section.classList.add('hidden');
+                        });
+
+                        // Remove active state from all buttons
+                        menuButtons.forEach(btn => {
+                            btn.classList.remove('text-yellow-400');
+                            btn.classList.add('text-white');
+                        });
+
+                        // Show the selected section and activate the button
+                        const category = button.dataset.category;
+                        if (sections[category]) {
+                            sections[category].classList.remove('hidden');
+                            button.classList.remove('text-white');
+                            button.classList.add('text-yellow-400');
+                        }
+                    });
+                });
+
+                // Set default active category (optional)
+                document.querySelector('button[data-category="starters"]').click();
+            </script>
+
+           
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="relative bg-pattern py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-4xl font-bold mb-12">
+                <span class="text-yellow-400 font-script">Special</span>
+                <span class="block text-white tracking-wider">TODAY'S OFFERS</span>
+            </h2>
+            <!-- Add special offers content -->
+        </div>
+    </section>
+</body>
+</html> 

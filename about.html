@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Royal Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .bg-pattern {
+            background-image: url('/images/dark-food-pattern.jpg');
+            background-color: #000;
+            background-blend-mode: overlay;
+        }
+        
+        .font-script {
+            font-family: 'Brush Script MT', cursive;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-sm text-white p-4 border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="royal.png" alt="Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-500">HOME</a>
+                <a href="about.html" class="hover:text-yellow-500">ABOUT US</a>
+                <a href="menu.html" class="hover:text-yellow-500">MENU</a>
+                <a href="/gallery" class="hover:text-yellow-500">GALLERY</a>
+                <a href="reservation.html" class="hover:text-yellow-500">RESERVATION</a>
+                <a href="location.html" class="hover:text-yellow-500">LOCATION</a>
+                <a href="/blog" class="hover:text-yellow-500">BLOG</a>
+            </div>
+
+            <!-- Mobile Menu Panel - Updated with proper content -->
+            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-50 hidden">
+                <div class="flex flex-col h-full">
+                    <!-- Close button -->
+                    <div class="flex justify-end p-4">
+                        <button id="mobile-menu-close" class="text-white">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <!-- Mobile menu links -->
+                    <div class="flex flex-col items-center space-y-6 pt-10">
+                        <a href="index.html" class="text-xl hover:text-yellow-500">HOME</a>
+                        <a href="about.html" class="text-xl hover:text-yellow-500">ABOUT US</a>
+                        <a href="menu.html" class="text-xl hover:text-yellow-500">MENU</a>
+                        <a href="/gallery" class="text-xl hover:text-yellow-500">GALLERY</a>
+                        <a href="reservation.html" class="text-xl hover:text-yellow-500">RESERVATION</a>
+                        <a href="/location" class="text-xl hover:text-yellow-500">LOCATION</a>
+                        <a href="/blog" class="text-xl hover:text-yellow-500">BLOG</a>
+                    </div>
+                    <!-- Mobile social links -->
+                    <div class="mt-auto mb-8">
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-instagram text-xl"></i></a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-twitter text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Header -->
+    <header class="relative pt-24 pb-12 bg-pattern">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">About Us</h1>
+            <p class="text-yellow-400 font-script text-2xl">Our Story</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative bg-pattern py-12">
+        <div class="container mx-auto px-4">
+            <!-- Our Story Section - Updated padding for mobile -->
+            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-yellow-400">Our Journey</h2>
+                <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Established in 2010, Royal Restaurant has been serving authentic Nepali cuisine in the heart of the city. 
+                    What started as a small family-owned establishment has grown into one of the most beloved Nepali restaurants, 
+                    known for our commitment to authentic flavors and exceptional service.
+                </p>
+                <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Our recipes have been passed down through generations, preserving the authentic taste of Nepal while 
+                    incorporating modern culinary techniques to create an unforgettable dining experience.
+                </p>
+            </section>
+
+            <!-- Our Values - Updated grid for mobile -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto mb-8 md:mb-12">
+                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-heart text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Passion</h3>
+                    <p class="text-gray-300 text-sm md:text-base">We pour our heart into every dish we serve.</p>
+                </div>
+                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-leaf text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Quality</h3>
+                    <p class="text-gray-300 text-sm md:text-base">We use only the finest ingredients, sourcing locally whenever possible to ensure fresh, authentic flavors.</p>
+                </div>
+                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-users text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Community</h3>
+                    <p class="text-gray-300 text-sm md:text-base">We're more than just a restaurant - we're a gathering place for friends, families, and food lovers.</p>
+                </div>
+            </section>
+
+            <!-- Our Team - Updated padding for mobile -->
+            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-yellow-400">Our Team</h2>
+                <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                    Led by Head Chef David vikram shahi , our culinary team brings together decades of experience in Nepali cuisine. 
+                    Each member of our staff is carefully selected and trained to maintain our high standards of food quality 
+                    and service excellence.
+                </p>
+            </section>
+
+            <!-- Awards & Recognition - Updated padding and text size -->
+            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-yellow-400">Awards & Recognition</h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 md:space-y-3 text-sm md:text-base">
+                    <li>Best Nepali Restaurant 2022 - City Food Awards</li>
+                    <li>Excellence in Authentic Cuisine 2021 - Culinary Association</li>
+                    <li>Outstanding Customer Service 2020 - Hospitality Excellence Awards</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">Visit us today and experience the authentic taste of Nepal</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.facebook.com/rs.shahi.565" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/arunshahi51/" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Updated script for better mobile menu handling -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+
+        function toggleMobileMenu(show) {
+            if (show) {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', () => toggleMobileMenu(true));
+        mobileMenuClose.addEventListener('click', () => toggleMobileMenu(false));
+
+        // Close menu when clicking a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMobileMenu(false);
+            }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu(false);
+            }
+        });
+    </script>
+</body>
+</html> 

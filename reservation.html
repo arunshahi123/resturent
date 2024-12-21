@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Royal Restaurant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation (same as index.html) -->
+    <nav class="fixed w-full z-50 bg-black/90 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <img src="royal.png" alt="Logo" class="h-12 w-auto">
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-500">HOME</a>
+                <a href="about.html" class="hover:text-yellow-500">ABOUT US</a>
+                <a href="menu.html" class="hover:text-yellow-500">MENU</a>
+                <a href="/gallery" class="hover:text-yellow-500">GALLERY</a>
+                <a href="reservation.html" class="hover:text-yellow-500">RESERVATION</a>
+                <a href="location.html" class="hover:text-yellow-500">LOCATION</a>
+                <a href="/blog" class="hover:text-yellow-500">BLOG</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-yellow-500"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-yellow-500"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reservation Section -->
+    <main class="relative min-h-screen pt-24">
+        <!-- Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/80"></div>
+            <img src="/images/reservation-bg.jpg" alt="Restaurant Interior" 
+                 class="w-full h-full object-cover" style="filter: brightness(0.3);">
+        </div>
+
+        <!-- Reservation Form -->
+        <div class="relative z-10 container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-center text-4xl font-bold mb-2">Make a Reservation</h2>
+                <p class="text-center text-yellow-500 mb-12">Book your table for an unforgettable dining experience</p>
+
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="reservationForm">
+                    <!-- Left Column -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" required
+                                class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" required
+                                class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Phone</label>
+                            <input type="tel" required
+                                class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Date</label>
+                            <input type="date" required
+                                class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Time</label>
+                            <select class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                                <option>5:00 PM</option>
+                                <option>5:30 PM</option>
+                                <option>6:00 PM</option>
+                                <option>6:30 PM</option>
+                                <option>7:00 PM</option>
+                                <option>7:30 PM</option>
+                                <option>8:00 PM</option>
+                                <option>8:30 PM</option>
+                                <option>9:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Number of Guests</label>
+                            <select class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500">
+                                <option>1 Person</option>
+                                <option>2 People</option>
+                                <option>3 People</option>
+                                <option>4 People</option>
+                                <option>5 People</option>
+                                <option>6 People</option>
+                                <option>7+ People</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-2">Special Requests</label>
+                        <textarea rows="4" 
+                            class="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg focus:ring-yellow-500 focus:border-yellow-500"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" 
+                            class="bg-yellow-500 text-black px-8 py-3 rounded-full hover:bg-yellow-600 transition duration-300 font-bold">
+                            CONFIRM RESERVATION
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your reservation! We will confirm shortly.');
+        });
+    </script>
+</body>
+</html> 
