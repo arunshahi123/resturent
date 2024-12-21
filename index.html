@@ -26,15 +26,15 @@
     </style>
 </head>
 <body class="bg-black text-white">
-    <!-- Navigation - Updated with semi-transparent dark background -->
+    <!-- Navigation with Mobile Menu Button -->
     <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-sm text-white p-4 border-b border-gray-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">
-                <img src="royal.png" alt="Logo" class="h-12 w-auto"> <!-- Add your logo image -->
+                <img src="royal.png" alt="Logo" class="h-12 w-auto">
             </div>
             
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <!-- Mobile Menu Button - Matches location.html -->
+            <button id="mobile-menu-button" class="md:hidden text-white fixed top-6 right-4 z-[60]">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
@@ -49,21 +49,31 @@
                 <a href="/blog" class="hover:text-yellow-500">BLOG</a>
             </div>
 
-            <!-- Mobile Menu Panel -->
-            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-50 hidden">
-                <div class="flex justify-end p-4">
-                    <button id="mobile-menu-close" class="text-white">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-                <div class="flex flex-col items-center space-y-6 pt-10">
-                    <a href="index.html" class="text-xl hover:text-yellow-500">HOME</a>
-                    <a href="about.html" class="text-xl hover:text-yellow-500">ABOUT US</a>
-                    <a href="menu.html" class="text-xl hover:text-yellow-500">MENU</a>
-                    <a href="/gallery" class="text-xl hover:text-yellow-500">GALLERY</a>
-                    <a href="reservation.html" class="text-xl hover:text-yellow-500">RESERVATION</a>
-                    <a href="location.html" class="text-xl hover:text-yellow-500">LOCATION</a>
-                    <a href="/blog" class="text-xl hover:text-yellow-500">BLOG</a>
+            <!-- Mobile Menu Panel - Matches location.html -->
+            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-[55] hidden">
+                <div class="flex flex-col h-full">
+                    <div class="flex justify-end p-4">
+                        <button id="mobile-menu-close" class="text-white">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-center space-y-6 pt-10">
+                        <a href="index.html" class="text-xl hover:text-yellow-500 transition-colors">HOME</a>
+                        <a href="about.html" class="text-xl hover:text-yellow-500 transition-colors">ABOUT US</a>
+                        <a href="menu.html" class="text-xl hover:text-yellow-500 transition-colors">MENU</a>
+                        <a href="/gallery" class="text-xl hover:text-yellow-500 transition-colors">GALLERY</a>
+                        <a href="reservation.html" class="text-xl hover:text-yellow-500 transition-colors">RESERVATION</a>
+                        <a href="location.html" class="text-xl hover:text-yellow-500 transition-colors">LOCATION</a>
+                        <a href="/blog" class="text-xl hover:text-yellow-500 transition-colors">BLOG</a>
+                    </div>
+                    <!-- Mobile Social Links -->
+                    <div class="mt-auto mb-8">
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-instagram text-xl"></i></a>
+                            <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-twitter text-xl"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,20 +115,39 @@
         <!-- Add your content sections here -->
     </section>
 
-    <!-- Add this script before closing body tag -->
+    <!-- Add this script at the bottom of the body -->
     <script>
+        // Mobile menu functionality - Matches location.html
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+        function toggleMobileMenu(show) {
+            mobileMenu.classList.toggle('hidden', !show);
+            document.body.style.overflow = show ? 'hidden' : 'auto';
+        }
+
+        mobileMenuButton.addEventListener('click', () => toggleMobileMenu(true));
+        mobileMenuClose.addEventListener('click', () => toggleMobileMenu(false));
+
+        // Close menu when clicking a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
         });
 
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                toggleMobileMenu(false);
+            }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu(false);
+            }
         });
     </script>
 </body>

@@ -20,15 +20,15 @@
     </style>
 </head>
 <body class="bg-black text-white">
-    <!-- Navigation -->
+    <!-- Navigation with Mobile Menu Button -->
     <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-sm text-white p-4 border-b border-gray-800">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">
                 <img src="royal.png" alt="Logo" class="h-12 w-auto">
             </div>
             
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <!-- Mobile Menu Button - Matches index.html -->
+            <button id="mobile-menu-button" class="md:hidden text-white fixed top-6 right-4 z-[60]">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
@@ -43,26 +43,24 @@
                 <a href="/blog" class="hover:text-yellow-500">BLOG</a>
             </div>
 
-            <!-- Mobile Menu Panel - Updated with proper content -->
-            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-50 hidden">
+            <!-- Mobile Menu Panel - Matches index.html -->
+            <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-[55] hidden">
                 <div class="flex flex-col h-full">
-                    <!-- Close button -->
                     <div class="flex justify-end p-4">
                         <button id="mobile-menu-close" class="text-white">
                             <i class="fas fa-times text-2xl"></i>
                         </button>
                     </div>
-                    <!-- Mobile menu links -->
                     <div class="flex flex-col items-center space-y-6 pt-10">
-                        <a href="index.html" class="text-xl hover:text-yellow-500">HOME</a>
-                        <a href="about.html" class="text-xl hover:text-yellow-500">ABOUT US</a>
-                        <a href="menu.html" class="text-xl hover:text-yellow-500">MENU</a>
-                        <a href="/gallery" class="text-xl hover:text-yellow-500">GALLERY</a>
-                        <a href="reservation.html" class="text-xl hover:text-yellow-500">RESERVATION</a>
-                        <a href="location.html" class="text-xl hover:text-yellow-500">LOCATION</a>
-                        <a href="/blog" class="text-xl hover:text-yellow-500">BLOG</a>
+                        <a href="index.html" class="text-xl hover:text-yellow-500 transition-colors">HOME</a>
+                        <a href="about.html" class="text-xl hover:text-yellow-500 transition-colors">ABOUT US</a>
+                        <a href="menu.html" class="text-xl hover:text-yellow-500 transition-colors">MENU</a>
+                        <a href="/gallery" class="text-xl hover:text-yellow-500 transition-colors">GALLERY</a>
+                        <a href="reservation.html" class="text-xl hover:text-yellow-500 transition-colors">RESERVATION</a>
+                        <a href="location.html" class="text-xl hover:text-yellow-500 transition-colors">LOCATION</a>
+                        <a href="/blog" class="text-xl hover:text-yellow-500 transition-colors">BLOG</a>
                     </div>
-                    <!-- Mobile social links -->
+                    <!-- Mobile Social Links -->
                     <div class="mt-auto mb-8">
                         <div class="flex justify-center space-x-6">
                             <a href="#" class="text-yellow-400 hover:text-yellow-300"><i class="fab fa-facebook-f text-xl"></i></a>
@@ -84,44 +82,44 @@
     </header>
 
     <!-- Main Content -->
-    <main class="relative bg-pattern py-12">
+    <main class="relative bg-pattern pt-24 pb-12">
         <div class="container mx-auto px-4">
-            <!-- Our Story Section - Updated padding for mobile -->
-            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm mb-8 md:mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-yellow-400">Our Journey</h2>
-                <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+            <!-- Our Story Section -->
+            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Our Story</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
                     Established in 2010, Royal Restaurant has been serving authentic Nepali cuisine in the heart of the city. 
                     What started as a small family-owned establishment has grown into one of the most beloved Nepali restaurants, 
                     known for our commitment to authentic flavors and exceptional service.
                 </p>
-                <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
                     Our recipes have been passed down through generations, preserving the authentic taste of Nepal while 
                     incorporating modern culinary techniques to create an unforgettable dining experience.
                 </p>
             </section>
 
             <!-- Our Values - Updated grid for mobile -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto mb-8 md:mb-12">
-                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
-                    <i class="fas fa-heart text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Passion</h3>
-                    <p class="text-gray-300 text-sm md:text-base">We pour our heart into every dish we serve.</p>
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+                <div class="bg-black/70 p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-heart text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">Passion</h3>
+                    <p class="text-gray-300 text-sm md:text-base">Our commitment to excellence</p>
                 </div>
-                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
-                    <i class="fas fa-leaf text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Quality</h3>
+                <div class="bg-black/70 p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-leaf text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">Quality</h3>
                     <p class="text-gray-300 text-sm md:text-base">We use only the finest ingredients, sourcing locally whenever possible to ensure fresh, authentic flavors.</p>
                 </div>
-                <div class="bg-black/70 p-4 md:p-6 rounded-lg backdrop-blur-sm text-center">
-                    <i class="fas fa-users text-yellow-400 text-2xl md:text-3xl mb-3 md:mb-4"></i>
-                    <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3">Community</h3>
+                <div class="bg-black/70 p-6 rounded-lg backdrop-blur-sm text-center">
+                    <i class="fas fa-users text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-white">Community</h3>
                     <p class="text-gray-300 text-sm md:text-base">We're more than just a restaurant - we're a gathering place for friends, families, and food lovers.</p>
                 </div>
             </section>
 
             <!-- Our Team - Updated padding for mobile -->
-            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm mb-8 md:mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-yellow-400">Our Team</h2>
+            <section class="max-w-4xl mx-auto bg-black/70 p-4 md:p-8 rounded-lg backdrop-blur-sm">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Our Team</h2>
                 <p class="text-gray-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                     Led by Head Chef David vikram shahi , our culinary team brings together decades of experience in Nepali cuisine. 
                     Each member of our staff is carefully selected and trained to maintain our high standards of food quality 
@@ -155,19 +153,15 @@
 
     <!-- Updated script for better mobile menu handling -->
     <script>
+        // Mobile menu functionality - Matches index.html and location.html
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
 
         function toggleMobileMenu(show) {
-            if (show) {
-                mobileMenu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
+            mobileMenu.classList.toggle('hidden', !show);
+            document.body.style.overflow = show ? 'hidden' : 'auto';
         }
 
         mobileMenuButton.addEventListener('click', () => toggleMobileMenu(true));
